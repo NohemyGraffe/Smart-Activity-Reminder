@@ -354,7 +354,11 @@ This script monitors the log file on the phone for activity data sent from the R
 
 In Adafruit IO, it's possible to create dashboards that display data from different feeds in real-time. For this project, I built a dashboard consisting of three blocks, each corresponding to one of the key metrics tracked by the device: water intake, exercise status, and work time.
 
-![image](https://github.com/user-attachments/assets/37e44870-9f6c-4660-ac6a-c3b27d2496f2)
+![image](https://github.com/user-attachments/assets/bce81c66-8dd1-4936-9527-56da03eeed8f)
+
+**Picture of the feeds in Adafruit**
+
+![image](https://github.com/user-attachments/assets/dfafb3b7-83aa-4276-a780-779b2a0855ac)
 
 
 ### Final thoughts and further improvements

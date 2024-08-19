@@ -14,7 +14,7 @@ Around 24 applied hours.
 
 ### Objective of the project
 
-The purpose of this device is to assist individuals, particularly those with ADHD (myself included), in easily managing daily activities like drinking the right amount of water, exercising, and maintaining productive time for work or study. While many smartphone apps and smartwatches offer reminders for such activities, they often require manual data entry, which can be tedious and distracting, especially for people with ADHD. This project aims to simplify that process by creating a device that automatically tracks these activities with minimal user intervention.
+The purpose of this device is to assist individuals, particularly those with ADHD (myself included), in easily managing daily activities like drinking the right amount of water, exercising, and maintaining productive time for work or study. While many smartphone apps and smartwatches offer reminders for such activities, they often require manual data entry, which can be tedious and distracting, especially for people with ADHD. This project aims to simplify that process by creating a device that tracks these activities with minimal user intervention.
 
 ### Device functionality
 

@@ -31,7 +31,7 @@ This function is designed to improve productivity by tracking the time spent on 
 
 The device will collect data on water intake, exercise habits, and productivity, which will be displayed in a dashboard. This data can motivate users to improve their daily routines by allowing them to track their progress and compare it with previous days.
 
-### Example of how the device could look in production
+### Example of what the device could look like in production
 
 ![image](https://github.com/user-attachments/assets/17dcee01-215e-44a8-9ae3-c009e4dbe3ce)
 

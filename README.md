@@ -104,26 +104,6 @@ Next, I connected the Pico to the USB cable. While holding down the BOOTSEL butt
 With the updated firmware installed, I returned to VSCode. I clicked on the Pymakr logo in the lower left toolbar, where the Pico should appear as a connected device. I selected the option to connect and enabled development mode. I then created a new project and chose a designated folder on my computer to store all project files. Three key files were created: main.py, boot.py, and pymakr.conf.
 The main program for the Pico should be written in the main.py file. When the device is connected, running the program in VSCode will upload it to the Pico, where it will continue to operate as long as the device is powered.
 
-### Transmitting the data / connectivity
-
-For my project, I decided to make the device dependent on my phone rather than directly connecting to Wi-Fi. To achieve this, I used a Bluetooth module on the Raspberry Pi Pico to connect with a Serial Bluetooth Terminal on my phone. The Pico sends data to my phone after each event (e.g., drinking water, exercising, working), where it is logged.
-
-### Data transmission steps
-
-**1. Event triggered on Pico:** When an event occurs, such as pressing a button to log water intake, the data is transmitted via the Bluetooth module to the Serial Bluetooth Terminal app on my phone.
-
-**2. Data logging:** The data received by the Serial Bluetooth Terminal is stored in a specific folder on my phone.
-
-**3. Data transfer to the cloud:** Using the Termux terminal app, a Python script runs periodically on my phone. This script retrieves the logged data and sends it to Adafruit IO, free tier, a cloud platform I've set up to handle the data.
-
-**4. Cloud storage and visualization:** On Adafruit IO, I have created three feeds: exercise_status, glasses_of_water, and working_time. The data sent to these feeds is then used to generate a dashboard that visualizes the metrics.
-
-### Wireless and transport protocols
-
-**Wireless protocol:** I used Bluetooth for short-range communication between the Pico and my phone. This choice was made to avoid the complexities of direct Wi-Fi setup on the Pico.
-
-**Transport Protocol:** The data is sent from the phone to Adafruit IO using HTTP requests facilitated by the Python script in Termux. 
-
 ### Putting everything together
 
 **Wiring Details:**
@@ -136,19 +116,19 @@ For my project, I decided to make the device dependent on my phone rather than d
 
 **Bluetooth Module (HC-06):** The module is connected to the Pico's UART pins (TX and RX) to enable wireless communication with a smartphone. The VCC and GND of the module are connected to the 3.3V and ground pins of the Pico.
 
-**Temperature and Humidity Sensor (DHT11):** Connected to a GPIO pin to read environmental data. The sensor's data pin is connected to the Pico, and it’s powered by the 3.3V and ground pins.
+**Temperature and Humidity Sensor (DHT11):** Connected to a GPIO pin to read environmental data. The sensor's data pin is connected to the Pico, and it’s powered by the 3.3V and ground pins. 
 
 ### Resistors, current, and voltage considerations
 
 **Resistors:** Each LED has a 1kΩ resistor to limit the current, ensuring that the LEDs operate safely without drawing too much current from the GPIO pins.
 
-**Current and voltage:** The Raspberry Pi Pico operates at 3.3V logic level, which is compatible with the HC-06 Bluetooth module and the DHT11 sensor. This setup minimizes power consumption and ensures that the components work within their specified voltage ranges.
+**Current and voltage:** The Raspberry Pi Pico operates at 3.3V logic level, which is compatible with the HC-06 Bluetooth module and the DHT11 sensor. 
 
 ### Development setup vs. production
 
 **Development setup:** The current setup is ideal for prototyping and testing on a solderless breadboard. This allows for easy modifications and troubleshooting during the development phase.
 
-**Production setup:** For a production setup, the components could be soldered onto a custom PCB for durability and reliability. The design is suitable for production with minimal changes.
+**Production setup:** For a production setup, the components could be soldered onto a custom PCB. The design is suitable for production with some changes.
 
 ### Circuit diagram (hand drawn :) )
 
@@ -159,6 +139,22 @@ For my project, I decided to make the device dependent on my phone rather than d
 ![image](https://github.com/user-attachments/assets/f7e7a8cc-67cf-4d0c-a0cd-4b5155df7eb6)
 
 ![image](https://github.com/user-attachments/assets/d6d4914e-e5e8-4606-b899-33c74c610637)
+
+### Transmitting the data / connectivity
+
+**Wireless protocol:**  I used Bluetooth for short-range communication between the Pico and my phone. This choice was made to enhance the device's portability and independence from specific locations, allowing it to be carried everywhere alongside the phone, thus making it more efficient as a personalized assistant device.
+
+**Transport Protocol:** The data is sent from the phone to Adafruit IO using HTTP requests facilitated by the Python script in Termux. 
+
+### Data transmission steps and cloud platform
+
+**1. Event triggered on Pico:** When an event occurs, such as pressing a button to log water intake, the data is transmitted via the Bluetooth module to the Serial Bluetooth Terminal app on my phone.
+
+**2. Data logging:** The data received by the Serial Bluetooth Terminal is stored in a specific folder on my phone.
+
+**3. Data transfer to the cloud:** Using the Termux terminal app, a Python script runs periodically on my phone. This script retrieves the logged data and sends it to Adafruit IO, free tier, a cloud platform I've set up to handle the data.
+
+**4. Cloud storage and visualization:** On Adafruit IO, I have created three feeds: exercise_status, glasses_of_water, and working_time. The data sent to these feeds is then used to generate a dashboard that visualizes the metrics.
 
 ### Program running on the Pico
 
@@ -248,7 +244,7 @@ import json
 
 This script monitors the log file on the phone for activity data sent from the Raspberry Pi Pico. It processes this data and sends it to Adafruit IO, where it is stored in designated feeds. The script runs continuously, ensuring that all activity data (water intake, exercise, work time) is logged and transmitted in real-time.
 
-### Core functionalities:**
+### Core functionalities:
 
 1. **Adafruit IO Setup:**
    

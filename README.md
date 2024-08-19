@@ -95,12 +95,14 @@ Aditionally, I also purchased from Electrokit, a kit of push buttons PCB 4 pins,
 
 ### Computer setup and uploading the program to the Pico
 
-I used Visual Studio Code (VSCode) as my Integrated Development Environment (IDE) and installed Node.js. After setting up both on my computer, I added the Pymakr extension in VSCode to communicate with the Raspberry Pi Pico running MicroPython. To begin programming the Pico, you first need to flash the MicroPython firmware. I downloaded the latest firmware release from the official website: https://micropython.org/download/RPI_PICO_W/.
+I used Visual Studio Code (VSCode) as my Integrated Development Environment (IDE). After setting it up on my computer, I also downloaded Node.js because the Pymakr extension in VSCode, which I used to program the Raspberry Pi Pico, depends on it. Node.js makes sure that Pymakr can connect to the Pico and manage the code properly.
 
-Next, I connected the Pico to the USB cable. While holding down the BOOTSEL button, I connected the other end of the USB cable to my computer. A new drive called "RPI-RP2" appeared in my file system, representing the Raspberry Pi Pico's storage. I then copied and pasted the UF2 firmware file into this storage. Once the upload was complete, the Pico automatically disconnected and rebooted. To confirm that the board is ready, unplug and reconnect the USB cable.
+To begin programming the Pico, you first need to flash the MicroPython firmware. I downloaded the latest firmware release from the official website: https://micropython.org/download/RPI_PICO_W/.
+
+Next, I connected the Pico to the USB cable. While holding down the BOOTSEL button, I connected the other end of the USB cable to my computer. A new drive called "RPI-RP2" appeared in my file system, representing the Raspberry Pi Pico's storage. I then copied and pasted the UF2 firmware file into this storage. Once the upload was complete, the Pico automatically disconnected and rebooted. To confirm that the board is ready, unplug and reconnect the USB cable to the computer.
 
 With the updated firmware installed, I returned to VSCode. I clicked on the Pymakr logo in the lower left toolbar, where the Pico should appear as a connected device. I selected the option to connect and enabled development mode. I then created a new project and chose a designated folder on my computer to store all project files. Three key files were created: main.py, boot.py, and pymakr.conf.
-The program for the Pico should be written in the main.py file. When the device is connected, running the program in VSCode will upload it to the Pico, where it will continue to operate as long as the device is powered.
+The main program for the Pico should be written in the main.py file. When the device is connected, running the program in VSCode will upload it to the Pico, where it will continue to operate as long as the device is powered.
 
 ### Transmitting the data / connectivity
 

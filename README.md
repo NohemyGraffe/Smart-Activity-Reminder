@@ -62,7 +62,7 @@ From the kit, I used the following components:
   
 **2 LED 5mm diffuse 1500mcd in red and yellow:** These LEDs serve as visual indicators for the water intake and exercise reminders. The red LED indicates the need to drink water, and the yellow one signifies the exercise reminder.
 
-![image](https://github.com/user-attachments/assets/dd0e98c9-666c-40e3-aaea-d201ee888827)
+![image](https://github.com/user-attachments/assets/023458a9-d399-4d55-adbc-a661e03ade70)
 
 **1 LED 5mm green diffuse 80mcd:** This LED acts as an indicator for productive work time. It lights up when the timer function is activated, signaling that the user is currently in a work or study session.
 

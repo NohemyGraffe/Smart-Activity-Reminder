@@ -235,11 +235,12 @@ import json
 
    - **Temperature and humidity retrieval:**
      ```python
-     def temperature(self):
-         return self.buf[2]
+     class DHT11(DHTBase):
+      def temperature(self):
+          return self.buf[2]
      
-     def humidity(self):
-         return self.buf[0]
+      def humidity(self):
+          return self.buf[0]
      ```
      - **Explanation**: These methods extract and return the temperature and humidity values from the buffer. The `DHT11` class is designed to work specifically with the DHT11 sensor, providing the necessary methods to obtain accurate readings.
     

@@ -142,9 +142,9 @@ The main program for the Pico should be written in the main.py file. When the de
 
 ### Transmitting the data / connectivity
 
+**How often is the data sent?** The data is sent whenever specific events occur. For example, when a button on the device is pressed to log activities such as drinking water, exercising, or working. This approach ensures that data is sent only when the relevant actions happen, rather than at regular intervals, which helps save energy and cloud storage.
 **Wireless protocol:**  I used Bluetooth for short-range communication between the Pico and my phone. This choice was made to enhance the device's portability and independence from specific locations, allowing it to be carried everywhere alongside the phone, thus making it more efficient as a personalized assistant device.
-
-**Transport Protocol:** The data is sent from the phone to Adafruit IO using HTTP requests facilitated by the Python script in Termux. 
+**Transport Protocol:** The data is sent from the phone to Adafruit IO using HTTP POST requests facilitated by a Python script running in Termux. 
 
 ### Data transmission steps and cloud platform
 

@@ -132,7 +132,8 @@ The main program for the Pico should be written in the main.py file. When the de
 
 ### Circuit diagram (hand drawn :) )
 
-![image](https://github.com/user-attachments/assets/0921663c-b47b-47b1-a723-6fe6285c7df4)
+![image](https://github.com/user-attachments/assets/fe8943e8-800b-43ef-95ca-d489f48d3826)
+
 
 ### Pictures of the components connected to the Pico on the breadbord
 

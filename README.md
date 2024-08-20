@@ -151,11 +151,19 @@ The main program for the Pico should be written in the main.py file. When the de
 
 ### Data transmission steps and cloud platform
 
-**1. Event triggered on Pico:** When an event occurs, such as pressing a button to log water intake, the data is transmitted via the Bluetooth module to the Serial Bluetooth Terminal app on my phone.
+**1. Event triggered on Pico:** When an event occurs, such as pressing a button to log exercise status, the data is transmitted via the Bluetooth module to the Serial Bluetooth Terminal app on my phone.
 
-**2. Data logging:** The data received by the Serial Bluetooth Terminal is stored in a specific folder on my phone.
+Screenshot of the Serial Bluetooth Terminal on my phone indicating the connection to the Bluetooth module and some events. ![image](https://github.com/user-attachments/assets/bb7a1489-556d-4b13-8cd5-77e4d058c281) 
+
+**2. Data logging:** The data received by the Serial Bluetooth Terminal is stored in a specific file on my phone.
 
 **3. Data transfer to the cloud:** Using the Termux terminal app, a Python script runs periodically on my phone. This script retrieves the logged data and sends it to Adafruit IO, free tier, a cloud platform I've set up to handle the data.
+
+Screenshot of the script in Termux to retrieve the data from the log file on my phone, and send it to Adafruit. ![image](https://github.com/user-attachments/assets/b061658d-472b-41cd-b39e-e7a0ec7db609) 
+
+Screenshot showing the confirmation of the data sent to Adafruit after running the script/file. ![image](https://github.com/user-attachments/assets/a067714f-fa77-44dd-83a5-fffbe3d6c566)
+
+**Note:** The timestamp coming from the Pico is incorrect. It is set to 2021 by default. Since the Pico is not directly connected to Wi-Fi, it is complicated to set the correct time. I discuss a possible future solution at the bottom of the report.
 
 **4. Cloud storage and visualization:** On Adafruit IO, I have created three feeds: exercise_status, glasses_of_water, and working_time. The data sent to these feeds is then used to generate a dashboard that visualizes the metrics.
 
